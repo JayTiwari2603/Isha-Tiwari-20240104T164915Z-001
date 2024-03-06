@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hit Music Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+        src="https://kit.fontawesome.com/7a4b62b0a4.js"
+        crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Hit Music</div>
+            <ul>
+                <a href="index.html"><li>Home</li></a>
+                <a href="#Artists"><li>Artists</li></a>
+                <a href="#Playlists"><li>Playlists</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section" id="hero">
+            <div class="container">
+                <h1>Hit Music Page</h1>
+                <h3>Discover the latest hit songs from your favorite artists.</h3>
+                <p>Explore a collection of the hottest tracks that are topping the charts right now.</p>
+            </div>
+        </section>
+
+        <section class="hit-songs">
+            <div class="container">
+                <h2>Top Hit Songs</h2>
+                <ul class="song-list">
+                    <li>Song 1 - Artist 1</li>
+                    <li>Song 2 - Artist 2</li>
+                    <li>Song 3 - Artist 3</li>
+                    <!-- Add more hit songs as needed -->
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Hit Music Page. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+main {
+    padding: 20px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.hit-songs {
+    margin-top: 20px;
+}
+
+.song-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.song-list li {
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.song-list li:hover {
+    background-color: #f0f0f0;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .audio-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .audio-details {
+            margin-left: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        audio {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="audio-container">
+        <audio controls>
+            <source src="Satranga_320(PaglaSongs).mp3">
+        </audio>
+        <div class="audio-details">
+            <img src="spotify-icon.png" alt="Spotify Icon" width="30">
+            <span>Satranga</span>
+        </div>
+    </div>
+
+    <div class="audio-container">
+        <audio controls>
+            <source src="Husn Anuv Jain 320 Kbps.mp3">
+        </audio>
+        <div class="audio-details">
+            <img src="spotify-icon.png" alt="Spotify Icon" width="30">
+            <span>Husn Anuv Jain</span>
+        </div>
+    </div>
+</body>
+</html>
+</style>
+<header>
+    <nav class="container"></nav>
+        <ul>
+            <a href="index.html"><li>Home</li></a>
+        </ul>
+    </header>
+<body>
+    <audio controls>
+        <source src="Satranga_320(PaglaSongs).mp3">
+    </audio>
+    <audio controls>
+        <source src="Husn Anuv Jain 320 Kbps.mp3">
+    </audio>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You</title>
+    <style>
+        /* Your existing CSS styles here */
+    </style>
+</head>
+<body>
+    <div class="audio-container">
+        <ul>
+            Satranga - Arijit Singh
+            <br>
+            <audio controls id="audio1">
+                <source src="Satranga_320(PaglaSongs).mp3">
+            </audio>
+            <button onclick="likeSong('audio1')">Like</button>
+        </ul>
+        
+        <!-- Repeat the structure for other songs -->
+
+    </div>
+
+    <script>
+        // JavaScript code for handling likes
+        function likeSong(audioId) {
+            var audioElement = document.getElementById(audioId);
+            // Implement your logic to handle likes here
+            // For simplicity, let's just alert a message
+            alert('Liked ' + audioElement.parentElement.firstChild.nodeValue.trim());
+        }
+    </script>
+</body>
+</html>
+<script>
+    function likeSong(audioId) {
+        var audioElement = document.getElementById(audioId);
+        var songTitle = audioElement.parentElement.firstChild.nodeValue.trim();
+        var artistName = audioElement.parentElement.nextSibling.textContent.trim();
+
+        // Store liked song information in local storage
+        var likedSongs = JSON.parse(localStorage.getItem('likedSongs')) || [];
+        likedSongs.push({ title: songTitle, artist: artistName });
+        localStorage.setItem('likedSongs', JSON.stringify(likedSongs));
+
+        // For simplicity, let's just alert a message
+        alert('Liked ' + songTitle);
+    }
+</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You</title>
+    <style>
+        /* Your existing CSS styles here */
+    </style>
+</head>
+<body>
+    <!-- Your existing HTML code here -->
+
+    <script>
+        // JavaScript code for handling likes and dynamically adding to Liked Songs page
+        function likeSong(title, artist, audioSrc) {
+            // Create a new list item for the liked song
+            var likedSongItem = document.createElement("li");
+            likedSongItem.className = "music-item";
+
+            // Create HTML structure for the liked song details
+            likedSongItem.innerHTML = `
+                <h3>${title}</h3>
+                <p>Artist: ${artist}</p>
+                <audio controls>
+                    <source src="${audioSrc}">
+                </audio>
+            `;
+
+            // Add the liked song to the Liked Songs list
+            var likedSongsList = document.getElementById("liked-songs-list");
+            likedSongsList.appendChild(likedSongItem);
+        }
+    </script>
+</body>
+</html>
+<ul class="music-list">
+            <li class="music-item">
+                <h3>Song Title 1</h3>
+                <p>Artist: Artist Name 1</p>
+                <!-- Add more details or links to the song here -->
+            </li>
+
+            <li class="music-item">
+                <h3>Song Title 2</h3>
+                <p>Artist: Artist Name 2</p>
+                <!-- Add more details or links to the song here -->
+            </li>
+            
+            <li class="music-item">
+                <h3>Song Title 2</h3>
+                <p>Artist: Artist Name 2</p>
+                <!-- Add more details or links to the song here -->
+            </li>
+            
+            <li class="music-item">
+                <h3>Song Title 2</h3>
+                <p>Artist: Artist Name 2</p>
+                <!-- Add more details or links to the song here -->
+            </li>
+          
+            <!-- Add more music items as needed -->
+
+        </ul>
+    </section>
+    <!-- In your HTML file -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Music Website</title>
+</head>
+<body>
+    <!-- Other content of your website -->
+    <img src="path/to/your/image.jpg" alt="Music Event Poster">
+</body>
+</html>
+
+<!-- In your CSS file (styles.css) -->
+img {
+    width: 100%; /* Make the image responsive to the container */
+    height: auto;
+    border-radius: 5px;
+}
+<li>Song 1 - Artist 1</li>
+<li>Song 2 - Artist 2</li>
+<li>Song 3 - Artist 3</li>
+
+<li>Song 4 - Artist 4</li>
+<li>Song 5 - Artist 5</li>
+<li>Song 6 - Artist 6</li>
+<!-- Add more hit songs as needed --
+    img {
+    width: 300px; 
+    height: auto; /
+    border-radius: 5px; 
+}
+<ul class="song-list">
+                    <img src="Anuv jain.jpeg" alt="Anuv Jain">
+                    <ul> ▪️ Husn - Anuv Jain 
+                    <br>
+                    <audio controls>
+                    <source src="Husn Anuv Jain 320 Kbps.mp3">
+                    </audio></br>
+                   </ul>
+                    <ul>▪️ Baarishein - Anuv Jain 
+                        <br>
+                        <audio controls>
+                        <source src="Baarishein_320(PaglaSongs).mp3">
+                        </audio></br>
+                        </ul>
+                        <ul>▪️ Alag Aasmaan - Anuv Jain 
+                            <br>
+                            <audio controls>
+                            <source src="Alag-Aasmaan_320(PaglaSongs).mp3">
+                            </audio></br>
+                          </ul>
+                         <img src="Radha_Krishna_.jpeg" alt="Radhe Songs">
+                         <ul>▪️ Radhe Kishori Daya Karo - Madhavas Rock Band
+                            <br>
+                            <audio controls>
+                            <source src="Radhe-Kishori-Daya-Karo.mp3">
+                            </audio></br>
+                          </ul>
+                          <ul>▪️ Tum Prem Ho - Mohit Lalwani, Bharat Kamai
+                            <br>
+                            <audio controls>
+                            <source src="Tum Prem Ho Tum Preet Ho-(PagalWorld).mp3">
+                            </audio></br>
+                          </ul>
+                          <ul>▪️ Shri Krishna Govind Hare Murari - Jubin Nautiyal
+                            <br>
+                            <audio controls>
+                            <source src="Shri Krishna Govind Hare Murari_320(PagalWorld.com.pe).mp3">
+                            </audio></br>
+                          </ul>
+                        </ul>

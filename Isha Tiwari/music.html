@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You</title>
+</head>
+<style>
+body { 
+    background-image: url(guitar\ stand.jpeg);
+    background-position: center;
+    background-size: 100%;
+    font-family: Arial, sans-serif;
+    background-color:#1c1a19fd;
+    color: white;
+    margin: 20px;
+    padding: 20px;
+} 
+header {
+    background-color:#d5d3ce;
+    text-align:center;   
+     font-size:larger;
+}
+
+header a{
+    text-decoration: none;
+    color:black;
+
+}
+
+.container {
+    max-width: 150px;
+    margin: 0;
+}
+.audio-container {
+    display:flex;
+    flex-direction: column;
+}
+.song-info {
+            margin: 20px;
+            color:white;
+ }
+.song-icon {
+            max-width: 100px;
+            max-height: 100px;
+            margin-bottom:10px;
+}
+audio {
+    width:100%;
+    max-width: 400px;
+    margin: 10px auto;
+
+}
+</style>
+<header>
+    <nav class="container"></nav>
+<a href="index.html"> 🎵 Home 🎵 </a>
+    </header>
+<body> 
+    <div class="audio-container">
+    <ul>Satranga - Arijit Singh 
+    <br>
+    <audio controls>
+    <source src="Satranga_320(PaglaSongs).mp3">
+    </audio></br><button onclick="likeSong('audio1')">❤️</button></ul>
+    <ul>Husn - Anuv Jain 
+    <br>
+    <audio controls>
+    <source src="Husn Anuv Jain 320 Kbps.mp3">
+    </audio></br><button onclick="likeSong('audio1')">❤️</button></ul>
+     <ul>Lover - Taylor-Swift<br>
+        <audio controls>
+        <source src="Lover-Taylor-Swift(PagalWorld).mp3">
+    </audio></br><button onclick="likeSong('audio1')">❤️</button></ul>
+    <ul>Chaleya - Arijit Singh,Shilpa Rao</br>
+        <audio controls>
+        <source src="Chaleya_320(PagalWorld.com.pe).mp3">
+    </audio></br><button onclick="likeSong('audio1')">❤️</button></ul>
+    <ul>Chunnari Chunnari - Abhijeet,Anuradha Sriram
+        <br>
+        <audio controls>
+        <source src="Chunnari Chunnari Biwi No. 1 128 Kbps.mp3">
+    </audio></br><button onclick="likeSong('audio1')">❤️</button></ul>
+    <ul>Shri Krishna Govind Hare Murari - Jubin Nautiyal
+        <br>
+        <audio controls>
+        <source src="Shri Krishna Govind Hare Murari_320(PagalWorld.com.pe).mp3">
+    </audio></br><button onclick="likeSong('audio1')">❤️</button></ul>
+    <ul>What Jhumka ? - Pritam,Arijit Singh
+        <br>
+        <audio controls>
+        <source src="What Jhumka_320(PagalWorld.com.pe).mp3">
+    </audio></br><button onclick="likeSong('audio1')">❤️</button></ul>
+    <ul> O Maahi - Pritam,Arijit Singh,Irshad Kamil
+        <br>
+        <audio controls>
+        <source src="O-Maahi(PaglaSongs.Com.Se).mp3">
+    </audio></br><button onclick="likeSong('audio1')">❤️</button></ul>
+</div>
+<script>
+    // JavaScript code for handling likes
+    function likeSong(audioId) {
+        var audioElement = document.getElementById(audioId);
+        // Implement your logic to handle likes here
+        // For simplicity, let's just alert a message
+        alert('Liked ' + audioElement.parentElement.firstChild.nodeValue.trim());
+    }
+</script>
+</body>
+</html>
